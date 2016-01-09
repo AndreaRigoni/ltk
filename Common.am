@@ -1,0 +1,28 @@
+
+
+if DEBUG
+OPT = -D_DEBUG -g3 -O0 
+OPT_LD = -no-install
+else
+OPT = -DNDEBUG -O3
+OPT_LD =
+endif
+
+if PARAL_MP
+OPEN_MP = -fopenmp
+else
+OPEN_MP =
+endif
+
+
+LTK_INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/src
+
+AM_CFLAGS   =  $(OPT) $(OPEN_MP)
+AM_CXXFLAGS =  $(OPT) $(OPEN_MP) $(ULIB_INCLUDES)
+AM_LDFLAGS  =  $(OPT_LD)
+
+AM_LIBS_ALL = @LIBS@            \
+              @LIBADD_DL@
+
+AM_DEFAULT_SOURCE_EXT = .c
+
