@@ -96,6 +96,7 @@ AM_CONDITIONAL(SIMD_AUTOVECTOR, test x"$autovector" = x"true")
 ######### MAKEFILES #########################################
 
 AC_CONFIG_FILES([
+	Makefile
 	src/Makefile
 	])
 AC_OUTPUT
